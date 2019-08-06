@@ -75,6 +75,6 @@ let g:vimwiki_list = [{'path': '~/.vimwiki/'}]
 "javacomplete2
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 
-set guifont=FiraaMonoforPowerline:h11
+set guifont=FiraMonoforPowerline:h11
 "set guifont=Fira\ Mono\ for\ Powerline:h11
 
