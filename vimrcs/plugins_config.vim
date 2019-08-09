@@ -18,7 +18,7 @@ call pathogen#helptags()
 """"""""""""""""""""""""""""""
 " => vim-plug
 """"""""""""""""""""""""""""""
-source ./vimrcs/plug.vim
+source $HOME/.vim_runtime/vimrcs/plug.vim
 " Specify a directory for plugins
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
