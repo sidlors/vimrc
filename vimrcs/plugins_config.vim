@@ -18,7 +18,7 @@ call pathogen#helptags()
 """"""""""""""""""""""""""""""
 " => vim-plug
 """"""""""""""""""""""""""""""
-source ~/.vimrcs/plug.vim
+source $HOME/.vim_runtime/vimrcs/plug.vim
 " Specify a directory for plugins
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
@@ -27,10 +27,10 @@ call plug#begin('~/.vim/plugged')
 
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 Plug 'junegunn/vim-easy-align'
-Plug 'gko/vim-layout'
-" Initialize plugin system
-call plug#end()
+Plug 'Shougo/deoplete.nvim'
+Plug 'janko/vim-test'
 
+call plug#end()
 
 
 """"""""""""""""""""""""""""""
@@ -140,7 +140,7 @@ let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ 'active': {
       \   'left': [ ['mode', 'paste'],
-      \             ['fugitive', 'readonly', 'filename', 'modified'] ],
+      \             ['gitbranch','fugitive', 'readonly', 'filename', 'modified'] ],
       \   'right': [ [ 'lineinfo' ], ['percent'] ]
       \ },
       \ 'component': {
@@ -178,7 +178,8 @@ let g:go_fmt_command = "goimports"
 let g:ale_linters = {
 \   'javascript': ['jshint'],
 \   'python': ['flake8'],
-\   'go': ['go', 'golint', 'errcheck']
+\   'go': ['go', 'golint', 'errcheck'],
+\   'java': ['javac', 'checkstyle','javalsp']
 \}
 
 nmap <silent> <leader>a <Plug>(ale_next_wrap)

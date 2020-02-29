@@ -69,6 +69,20 @@ set showmatch           " higlight matching parentheses and brackets
 nmap <F5> :set invrelativenumber<CR>
 imap <F5> <ESC>:set invrelativenumber<CR>a
 
+
+" underline the word under the cursor
+let HlUnderCursor=1
+autocmd CursorMoved * exe exists("HlUnderCursor")?HlUnderCursor?printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/')):'match none':""
+
+" copy paste with the exterior buffers
+vmap <C-c> "+y
+vmap <C-x> "+c
+vmap <C-v> "+gP
+" vmap <C-v> c<ESC>"+p
+imap <C-v> <ESC>"+pa
+nnoremap <C-v> i<ESC>"+pa<ESC>
+
+
 " vimwiki
 let g:vimwiki_list = [{'path': '~/.vimwiki/'}]
 
